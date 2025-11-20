@@ -1,0 +1,159 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: #f5f7fa;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.selection-card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 50px 60px;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+
+.logo-section {
+  margin-bottom: 40px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.gear-icon {
+  width: 60px;
+  height: 60px;
+  background-image: url("/Frontend/images/logo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 50px;
+}
+
+.user-options {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 50px;
+  flex: 1;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.user-option:hover {
+  transform: translateY(-5px);
+}
+
+.option-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  border: 4px solid;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.farmer-option .option-circle {
+  border-color: #8bc34a;
+  background: white;
+}
+
+.owner-option .option-circle {
+  border-color: #ffa726;
+  background: white;
+}
+
+.tractor-icon,
+.harvester-icon {
+  width: 60px;
+  height: 60px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.tractor-icon {
+  background-image: url("/Frontend/images/tractor.png");
+}
+
+.harvester-icon {
+  background-image: url("/Frontend/images/harvester.jpeg");
+}
+
+.option-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.option-subtitle {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.4;
+}
+
+@media (max-width: 600px) {
+  .selection-card {
+    padding: 40px 30px;
+  }
+
+  .user-options {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .option-circle {
+    width: 100px;
+    height: 100px;
+  }
+
+  .tractor-icon,
+  .harvester-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .title {
+    font-size: 24px;
+    margin-bottom: 40px;
+  }
+}

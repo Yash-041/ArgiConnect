@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/Frontend/styles/farmer_login.css">
+    <title>Farmer Login - AgriConnect</title>
+ 
+  </head>
+  <body>
+    <div class="login-container">
+      <!-- Logo -->
+      <div class="logo">
+        <div class="logo-image">
+          <img
+            src="styles/logo.png"
+            alt="AgriConnect Logo"
+            onerror="this.style.display='none'; this.parentElement.style.background='#4CAF50'; this.parentElement.innerHTML='🌾';"
+          />
+        </div>
+        <div class="logo-text">AgriConnect</div>
+      </div>
+
+      <!-- Farmer Illustration -->
+      <div class="farmer-illustration">🧑‍🌾</div>
+
+      <!-- Login Form -->
+      <h1 class="login-title">Welcome Back, Farmer!</h1>
+      <p class="login-subtitle">
+        Sign in to access your agricultural dashboard
+      </p>
+
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="email" class="form-label">Email Address</label>
+          <input
+            type="email"
+            id="email"
+            class="form-input"
+            placeholder="Enter your email"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="password" class="form-label">Password</label>
+          <input
+            type="password"
+            id="password"
+            class="form-input"
+            placeholder="Enter your password"
+            required
+          />
+        </div>
+
+        <div class="forgot-password">
+          <a href="#forgot">Forgot your password?</a>
+        </div>
+
+        <button type="submit" class="login-button">
+          Sign In to AgriConnect
+        </button>
+      </form>
+
+      <div class="divider">
+        <span>or continue with</span>
+      </div>
+
+
+      <div class="signup-link">
+        New to AgriConnect? <a href="/Frontend/pages/Farmer_signUP.html">Create an account</a>
+      </div>
+    </div>
+
+    <script>
+      // Form submission handler
+      document
+        .getElementById("loginForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const button = this.querySelector(".login-button");
+          const email = document.getElementById("email").value;
+          const password = document.getElementById("password").value;
+
+          // Add loading state
+          button.classList.add("loading");
+
+          // Simulate login process
+          setTimeout(() => {
+            button.classList.remove("loading");
+
+            // Simple validation
+            if (email && password) {
+              alert("Login successful! Redirecting to dashboard...");
+              // Redirect to home page or dashboard
+              window.location.href = "home_page.html";
+            } else {
+              alert("Please fill in all fields.");
+            }
+          }, 1500);
+        });
+
+      // Social login handler
+      function socialLogin(provider) {
+        alert(
+          `Logging in with ${
+            provider.charAt(0).toUpperCase() + provider.slice(1)
+          }...`
+        );
+        // Add your social login logic here
+      }
+
+      // Input focus effects
+      const inputs = document.querySelectorAll(".form-input");
+      inputs.forEach((input) => {
+        input.addEventListener("focus", function () {
+          this.parentElement.classList.add("focused");
+        });
+
+        input.addEventListener("blur", function () {
+          if (this.value === "") {
+            this.parentElement.classList.remove("focused");
+          }
+        });
+
+        // Add floating label effect
+        input.addEventListener("input", function () {
+          if (this.value !== "") {
+            this.parentElement.classList.add("has-content");
+          } else {
+            this.parentElement.classList.remove("has-content");
+          }
+        });
+      });
+
+      // Add some interactive effects
+      document
+        .querySelector(".farmer-illustration")
+        .addEventListener("click", function () {
+          this.style.transform = "scale(1.1) rotate(5deg)";
+          setTimeout(() => {
+            this.style.transform = "scale(1) rotate(0deg)";
+          }, 300);
+        });
+
+      // Back to home page
+      document.querySelector(".logo").addEventListener("click", function () {
+        window.location.href = "home_page.html";
+      });
+    </script>
+  </body>
+</html>

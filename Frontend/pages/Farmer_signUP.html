@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/Frontend/styles/Farmer_signup.css" />
+    <title>Farmer Sign Up - AgriConnect</title>
+  </head>
+  <body>
+    <div class="signup-container">
+      <!-- Logo -->
+      <div class="logo" onclick="window.location.href='../home_page.html'">
+        <div class="logo-image">
+          <img
+            src="../login_tractor.jpeg"
+            alt="AgriConnect Logo"
+            onerror="this.style.display='none'; this.parentElement.style.background='#4CAF50'; this.parentElement.innerHTML='🚜';"
+          />
+        </div>
+        <div class="logo-text">AgriConnect</div>
+      </div>
+
+      <!-- Farmer Illustration -->
+      <div class="farmer-illustration">👨‍🌾</div>
+
+      <!-- Signup Form -->
+      <h1 class="signup-title">Join AgriConnect</h1>
+      <p class="signup-subtitle">
+        Create your farmer account and start connecting with the agricultural
+        community
+      </p>
+
+      <form id="signupForm">
+        <!-- Personal Information -->
+        <div class="form-group">
+          <label for="fullName" class="form-label">Full Name</label>
+          <input
+            type="text"
+            id="fullName"
+            class="form-input"
+            placeholder="Enter your full name"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="email" class="form-label">Email Address</label>
+          <input
+            type="email"
+            id="email"
+            class="form-input"
+            placeholder="Enter your email"
+            required
+          />
+        </div>
+
+        <!-- Password -->
+        <div class="form-group">
+          <label for="password" class="form-label">Password</label>
+          <input
+            type="password"
+            id="password"
+            class="form-input"
+            placeholder="Create a strong password"
+            required
+          />
+          <div class="password-strength">
+            <div class="strength-bar">
+              <div class="strength-fill" id="strengthFill"></div>
+            </div>
+            <span id="strengthText">Password strength</span>
+          </div>
+        </div>
+
+        <div class="checkbox-group">
+          <input type="checkbox" id="terms" class="checkbox-input" required />
+          <label for="terms" class="checkbox-label">
+            I agree to the <a href="#terms">Terms of Service</a> and
+            <a href="#privacy">Privacy Policy</a>
+          </label>
+        </div>
+
+        <div class="checkbox-group">
+          <input type="checkbox" id="newsletter" class="checkbox-input" />
+          <label for="newsletter" class="checkbox-label">
+            I want to receive updates about new features and agricultural tips
+          </label>
+        </div>
+
+        <button type="submit" class="signup-button">
+          Create My Farmer Account
+        </button>
+      </form>
+
+      <div class="divider">
+        <span>or sign up with</span>
+      </div>
+
+      <div class="login-link">
+        Already have an account?
+        <a href="/Frontend/pages/farmer_login.html">Sign in here</a>
+      </div>
+
+      <!-- Success State (Hidden by default) -->
+      <div class="success-checkmark" id="successIcon"></div>
+    </div>
+
+    <script>
+      // Password strength checker
+      const passwordInput = document.getElementById("password");
+      const strengthFill = document.getElementById("strengthFill");
+      const strengthText = document.getElementById("strengthText");
+
+      passwordInput.addEventListener("input", function () {
+        const password = this.value;
+        const strength = calculatePasswordStrength(password);
+
+        strengthFill.className = "strength-fill";
+
+        if (password.length === 0) {
+          strengthText.textContent = "Password strength";
+          return;
+        }
+
+        if (strength < 3) {
+          strengthFill.classList.add("weak");
+          strengthText.textContent = "Weak password";
+        } else if (strength < 5) {
+          strengthFill.classList.add("medium");
+          strengthText.textContent = "Medium strength";
+        } else {
+          strengthFill.classList.add("strong");
+          strengthText.textContent = "Strong password";
+        }
+      });
+
+      function calculatePasswordStrength(password) {
+        let strength = 0;
+        if (password.length >= 8) strength++;
+        if (/[a-z]/.test(password)) strength++;
+        if (/[A-Z]/.test(password)) strength++;
+        if (/[0-9]/.test(password)) strength++;
+        if (/[^A-Za-z0-9]/.test(password)) strength++;
+        if (password.length >= 12) strength++;
+        return strength;
+      }
+
+      // Form submission
+      document
+        .getElementById("signupForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const button = this.querySelector(".signup-button");
+          const fullName = document.getElementById("fullName").value;
+          const email = document.getElementById("email").value;
+          const password = document.getElementById("password").value;
+
+          // Basic validation
+          if (!fullName || !email || !password) {
+            alert("Please fill in all fields!");
+            return;
+          }
+
+          // Validate password strength
+          if (calculatePasswordStrength(password) < 3) {
+            alert("Please choose a stronger password.");
+            return;
+          }
+
+          // Add loading state
+          button.classList.add("loading");
+
+          // Simulate registration process
+          setTimeout(() => {
+            button.classList.remove("loading");
+
+            // Show success state
+            document.getElementById("successIcon").style.display = "block";
+            document.querySelector(".farmer-illustration").style.display =
+              "none";
+
+            alert("Account created successfully! Welcome to AgriConnect!");
+
+            // Redirect to login page
+            setTimeout(() => {
+              window.location.href = "../farmer_login.html";
+            }, 2000);
+          }, 2000);
+        });
+
+      // Social signup
+      function socialSignup(provider) {
+        alert(
+          `Signing up with ${
+            provider.charAt(0).toUpperCase() + provider.slice(1)
+          }...`
+        );
+      }
+
+      // Real-time email validation
+      document.getElementById("email").addEventListener("blur", function () {
+        const email = this.value;
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (email && !emailRegex.test(email)) {
+          this.style.borderColor = "#ff4444";
+        } else {
+          this.style.borderColor = "#4CAF50";
+        }
+      });
+    </script>
+  </body>
+</html>
