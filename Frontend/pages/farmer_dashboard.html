@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Farmer Dashboard - AgriConnect</title>
+    <link rel="stylesheet" href="/Frontend/styles/farmer_dashboard.css" />
+    <script src="/Frontend/js/farmer_dashboard.js" defer></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="logo">
+          <img src="/Frontend/images/logo.png" alt="AgriConnect Logo" />
+          <span>AgriConnect</span>
+        </div>
+        <nav class="nav">
+          <a href="home_page.html" class="nav-link">Home</a>
+          <a href="#" class="nav-link active">My Bookings</a>
+          <a href="#" class="nav-link">My Profile</a>
+          <a href="#" class="nav-link">Support</a>
+        </nav>
+        <div class="user-profile">
+          <span class="user-icon">👤</span>
+          <span class="welcome-text">Welcome, Farmer's Name</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="container">
+        <div class="top-section">
+          <div class="card find-equipment">
+            <h3>Find Equipment Near You</h3>
+            <div class="location-search">
+              <div class="location-field">
+                <span class="location-icon">📍</span>
+                <input type="text" placeholder="Location" />
+                <span class="search-icon">🔍</span>
+              </div>
+              <div class="location-field">
+                <span class="location-icon">📍</span>
+                <input type="text" placeholder="My Location" />
+              </div>
+            </div>
+            <div class="date-filters">
+              <span>Date: Modular cancft 1 Qps dc Dondf</span>
+            </div>
+            <button class="search-btn">Search & Compare Prices</button>
+          </div>
+
+          <div class="card welcome-card">
+            <div class="welcome-content">
+              <h2>Welcome back,</h2>
+              <h3>3 pending Requests</h3>
+              <button class="check-status-btn">Check status now</button>
+            </div>
+          </div>
+
+          <div class="bookings-sidebar">
+            <h3>My Bookings</h3>
+            <div class="booking-list">
+              <div class="booking-item">
+                <img
+                  src="/Frontend/images/tractor1.jpeg"
+                  alt="Tractor"
+                  class="equipment-thumb"
+                />
+                <div class="booking-details">
+                  <h4>Tractor (45 HP)</h4>
+                  <p>12 May 2025</p>
+                </div>
+                <span class="status-indicator active">✓</span>
+              </div>
+              <div class="booking-item">
+                <img
+                  src="/Frontend/images/tractor3.jpeg"
+                  alt="Tractor"
+                  class="equipment-thumb"
+                />
+                <div class="booking-details">
+                  <h4>Tractor (60 HP)</h4>
+                  <p>15 May 2025</p>
+                </div>
+                <span class="status-indicator active">✓</span>
+              </div>
+              <div class="booking-item">
+                <img
+                  src="/Frontend/images/plough1.jpeg"
+                  alt="Plough"
+                  class="equipment-thumb"
+                />
+                <div class="booking-details">
+                  <h4>Plough</h4>
+                  <p>20 May 2025</p>
+                </div>
+                <span class="status-indicator active">✓</span>
+              </div>
+              <div class="booking-item">
+                <img
+                  src="/Frontend/images/sower1.jpeg"
+                  alt="Sower"
+                  class="equipment-thumb"
+                />
+                <div class="booking-details">
+                  <h4>Sower</h4>
+                  <p>25 May 2025</p>
+                </div>
+                <span class="status-indicator active">✓</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="middle-section">
+          <div class="card pricing-card">
+            <h3>Understand Our Pricing</h3>
+            <div class="rating">⭐⭐⭐⭐⭐</div>
+            <div class="pricing-details">
+              <p><strong>Base Rate:</strong></p>
+              <p>Fuel/Operator: Clearly inflated</p>
+              <p>Platform: Included</p>
+            </div>
+            <button class="pricing-btn">Read Full Pricing Policy</button>
+          </div>
+
+          <div class="card upcoming-rentals">
+            <h3>My Upcoming Rentals</h3>
+            <div class="rental-item">
+              <img
+                src="/Frontend/images/tractor1.jpeg"
+                alt="Tractor"
+                class="rental-image"
+              />
+              <div class="rental-header">
+                <h4>Tractor (45 HP)</h4>
+              </div>
+              <p class="rental-date">24 Nov 2025</p>
+              <p class="owner-name">Owner: Manish Kumar</p>
+            </div>
+            <button class="view-all-btn">View All Bookings</button>
+          </div>
+          <div class="card latest-updates">
+            <h3>Latest Updates & Tips</h3>
+            <div class="update-item">
+              <p>New experimental due adder & removal</p>
+            </div>
+            <div class="action-buttons">
+              <button class="learn-more-btn">Learn More</button>
+              <button class="more-btn">More</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="equipment-section">
+          <h2>Nearest Equipment Available Now</h2>
+          <div class="equipment-grid">
+            <div
+              class="equipment-card"
+              onclick="openRentModal('Horrow', '/Frontend/images/horrow2.jpeg', '₹2000/day')"
+            >
+              <div class="equipment-image">
+                <img src="/Frontend/images/horrow2.jpeg" alt="horrow" />
+                <span class="availability-badge">✓</span>
+              </div>
+              <h4>Horrow</h4>
+              <div class="rating">⭐⭐⭐⭐⭐</div>
+              <p class="price">₹2000/day</p>
+            </div>
+            <div
+              class="equipment-card"
+              onclick="openRentModal('Harvester', '/Frontend/images/harvester1.jpeg', '₹1500/day')"
+            >
+              <div class="equipment-image">
+                <img src="/Frontend/images/harvester1.jpeg" alt="harvester" />
+                <span class="availability-badge">✓</span>
+              </div>
+              <h4>Harvester</h4>
+              <div class="rating">⭐⭐⭐⭐⭐</div>
+              <p class="price">₹1500/day</p>
+            </div>
+            <div
+              class="equipment-card"
+              onclick="openRentModal('Tractor (45 HP)', '/Frontend/images/tractor3.jpeg', '₹1200/day')"
+            >
+              <div class="equipment-image">
+                <img src="/Frontend/images/tractor3.jpeg" alt="Tractor" />
+                <span class="availability-badge">✓</span>
+              </div>
+              <h4>Tractor</h4>
+              <div class="rating">⭐⭐⭐⭐⭐</div>
+              <p class="price">₹1200/day</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div id="rentModal" class="modal-overlay">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="rent-equipment-header">
+            <h2>Rent Equipment</h2>
+          </div>
+          <button class="close-modal" onclick="closeRentModal()">✕</button>
+        </div>
+
+        <div class="equipment-info">
+          <img
+            id="modalEquipmentImage"
+            src=""
+            alt="Equipment"
+            class="modal-equipment-image"
+          />
+          <div class="equipment-details">
+            <h3 id="modalEquipmentName">Tractor (45 HP)</h3>
+            <p class="equipment-specs">1500 RPM, Excellent Condition</p>
+            <p class="equipment-price" id="modalEquipmentPrice">₹1200/day</p>
+          </div>
+        </div>
+
+        <!-- Booking form where user enters details -->
+        <form class="rent-form">
+          <!-- Location input -->
+          <div class="form-section">
+            <h4>Location</h4>
+            <div class="form-group">
+              <input
+                type="text"
+                placeholder="Enter location"
+                class="form-input"
+              />
+            </div>
+          </div>
+
+          <!-- Mobile number input -->
+          <div class="form-group">
+            <label>Mobile Number</label>
+            <div class="phone-input">
+              <select class="country-code">
+                <option value="+91">🇮🇳 +91</option>
+              </select>
+              <input
+                type="tel"
+                placeholder="Mobile"
+                class="form-input mobile-input"
+              />
+            </div>
+          </div>
+
+          <!-- Start date input -->
+          <div class="form-group">
+            <label>Start Date</label>
+            <input
+              type="date"
+              class="form-input"
+              id="startDate"
+              onchange="calculateCost()"
+            />
+          </div>
+
+          <!-- End date input -->
+          <div class="form-group">
+            <label>End Date</label>
+            <input
+              type="date"
+              class="form-input"
+              id="endDate"
+              onchange="calculateCost()"
+            />
+          </div>
+
+          <!-- Total cost display -->
+          <div class="cost-section">
+            <div class="cost-display">
+              <span>Total Rental Cost</span>
+              <span class="cost-amount" id="totalCost">₹ 5,250.00</span>
+              <small>(Dynamic Pricing - No Hidden Fees)</small>
+            </div>
+          </div>
+
+          <!-- Submit button -->
+          <button type="submit" class="request-booking-btn">
+            Request Booking
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-links">
+          <a href="#" class="footer-link">About Us</a>
+          <a href="#" class="footer-link">Contact</a>
+          <a href="#" class="footer-link">Terms & Conditions</a>
+          <a href="#" class="footer-link">Privacy Policy</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Owner Dashboard - AgriConnect</title>
+    <link rel="stylesheet" href="/Frontend/styles/owner_dashboard.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <div class="logo">
+          <img src="/Frontend/images/logo.png" alt="AgriConnect Logo" />
+          <span>AgriConnect</span>
+        </div>
+        <nav class="nav">
+          <a href="home_page.html" class="nav-link active">Home</a>
+          <a href="#" class="nav-link">My Equipment</a>
+          <a href="#" class="nav-link">Bookings</a>
+        </nav>
+        <div class="header-right">
+          <div class="user-profile">
+            <span class="user-avatar">👤</span>
+          </div>
+          <button
+            class="list-machine-btn"
+            onclick="window.location.href='upload_equip.html'"
+          >
+            List New Machine
+            <span class="dropdown-arrow">▼</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="container">
+        <!-- Stats Section -->
+        <div class="stats-section">
+          <div class="stat-card earnings">
+            <div class="stat-icon">📊</div>
+            <div class="stat-content">
+              <h3>Earnings:</h3>
+              <div class="stat-value">₹18,500</div>
+              <div class="stat-change positive">+5% this month</div>
+            </div>
+          </div>
+          <div class="stat-card active-rentals">
+            <div class="stat-icon">🚜</div>
+            <div class="stat-content">
+              <h3>Active Rentals:</h3>
+              <div class="stat-value">12</div>
+              <div class="stat-status on-track">Status: On track</div>
+            </div>
+          </div>
+          <div class="stat-card pending-requests">
+            <div class="stat-icon">⏳</div>
+            <div class="stat-content">
+              <h3>Pending Requests:</h3>
+              <div class="stat-value">5</div>
+              <div class="stat-status action-required">Action required</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main Dashboard Content -->
+        <div class="dashboard-content">
+          <!-- Recent Booking Requests -->
+          <div class="card booking-requests">
+            <h2>Recent Booking Requests</h2>
+            <div class="request-list">
+              <div class="request-item">
+                <img
+                  src="/Frontend/images/tractor1.jpeg"
+                  alt="Tractor"
+                  class="equipment-image"
+                />
+                <div class="request-info">
+                  <h4>Tractor (Swaraj 744) FE</h4>
+                  <p class="farmer-name">Farmer can use the .........</p>
+                  <p class="booking-date">Nov 25 - 28</p>
+                </div>
+                <div class="request-actions">
+                  <button class="accept-btn">Accept</button>
+                  <button class="decline-btn">Decline</button>
+                </div>
+              </div>
+
+              <div class="request-item">
+                <img
+                  src="/Frontend/images/tractor3.jpeg"
+                  alt="Tractor"
+                  class="equipment-image"
+                />
+                <div class="request-info">
+                  <h4>Tractor (Swaraj w/ Front) 744 FE</h4>
+                  <p class="farmer-name">Tractor for farmer ............</p>
+                  <p class="booking-date">Nov 25 - 28</p>
+                </div>
+                <div class="request-actions">
+                  <button class="accept-btn">Accept</button>
+                  <button class="decline-btn">Decline</button>
+                </div>
+              </div>
+
+              <div class="request-item">
+                <img
+                  src="/Frontend/images/harvester1.jpeg"
+                  alt="Combine Harvester"
+                  class="equipment-image"
+                />
+                <div class="request-info">
+                  <h4>Combine Harvester</h4>
+                  <p class="farmer-name">Harvester..........</p>
+                  <p class="booking-date">Nov 25 - 28</p>
+                </div>
+                <div class="request-actions">
+                  <button class="accept-btn">Accept</button>
+                  <button class="decline-btn">Decline</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card equipment-reviews">
+            <h2>Top Equipment & Reviews</h2>
+
+            <div class="top-equipment">
+              <h3>Top Equipment</h3>
+              <div class="equipment-list">
+                <div class="equipment-item">
+                  <span class="equipment-name">Tractor A</span>
+                  <span class="booking-count">Booked 5 times</span>
+                </div>
+                <div class="equipment-item">
+                  <span class="equipment-name">Harvester</span>
+                </div>
+                <div class="equipment-item">
+                  <span class="equipment-name">Hartester 3 times</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="recent-rating">
+              <h3>Recent Rating</h3>
+              <div class="rating-display">
+                <span class="rating-stars">⭐ 4.8/5 Stars</span>
+              </div>
+              <a href="#" class="read-reviews-link">Read All Reviews</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-links">
+          <a href="#" class="footer-link">About Us</a>
+          <a href="#" class="footer-link">Contact</a>
+          <a href="#" class="footer-link">Terms & Conditions</a>
+          <a href="#" class="footer-link">Privacy Policy</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>List Your New Machine - AgriConnect</title>
+    <link rel="stylesheet" href="/Frontend/styles/upload_equip.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="logo">
+          <img src="/Frontend/images/logo.png" alt="AgriConnect Logo" />
+          <span>AgriConnect</span>
+        </div>
+        <nav class="nav">
+          <a href="owner_dashboard.html" class="nav-link">Home</a>
+          <a href="#" class="nav-link">My Equipment</a>
+          <a href="#" class="nav-link">Bookings</a>
+        </nav>
+        <div class="header-right">
+          <div class="user-profile">
+            <span class="user-avatar">👤</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="container">
+        <h1 class="page-title">List Your New Machine</h1>
+
+        <div class="content-wrapper">
+          <div class="form-section">
+            <h2 class="section-title">Machine Details</h2>
+
+            <div class="upload-area">
+              <div class="upload-icon">📷</div>
+              <h3>Upload Photo(s)</h3>
+              <p>Drag & drop or click to upload</p>
+            </div>
+
+            <div class="form-group">
+              <label for="machineName">Machine Name</label>
+              <input
+                type="text"
+                id="machineName"
+                class="form-input"
+                value="Mobile No."
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="description">Short Description</label>
+              <textarea
+                id="description"
+                class="form-textarea"
+                rows="3"
+              ></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="pricePerDay">Price per Day (₹)</label>
+              <div class="price-input-wrapper">
+                <input
+                  type="number"
+                  id="pricePerDay"
+                  class="form-input price-input"
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="location">Location (City/District)</label>
+              <input type="text" id="location" class="form-input" />
+            </div>
+
+            <button class="submit-btn">Submit Listing</button>
+          </div>
+
+          <div class="preview-section">
+            <h2 class="section-title">Preview</h2>
+
+            <div class="preview-card">
+              <div class="preview-image">
+                <img
+                  src="/Frontend/images/tractor1.jpeg"
+                  alt="Tractor Preview"
+                />
+              </div>
+              <div class="preview-details">
+                <h3>Tractor (Swaaj 744) FE</h3>
+                <p class="preview-price">₹1850</p>
+                <p class="preview-location">Meerut</p>
+              </div>
+            </div>
+
+            <div class="tips-section">
+              <h3>Tips for a Great Listing</h3>
+              <ul class="tips-list">
+                <li>Clear photos</li>
+                <li>Accurate description</li>
+                <li>Accurate</li>
+                <li>Competitive pricing</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-links">
+          <a href="#" class="footer-link">About Us</a>
+          <a href="#" class="footer-link">Contact</a>
+          <a href="#" class="footer-link">Terms & Conditions</a>
+          <a href="#" class="footer-link">Privacy Policy</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

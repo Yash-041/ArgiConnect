@@ -3,38 +3,38 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/Frontend/styles/Farmer_signup.css" />
-    <title>Farmer Sign Up - AgriConnect</title>
+    <link rel="stylesheet" href="/Frontend/styles/owner_signup.css" />
+    <title>Equipment Owner Sign Up - AgriConnect</title>
   </head>
   <body>
-    <div class="container">
+    <div class="signup_cntnar">
       <div class="logo" onclick="window.location.href='../home_page.html'">
         <div class="logo-image">
           <img
             src="/Frontend/images/logo.png"
             alt="AgriConnect Logo"
-            onerror="this.style.display='none'; this.parentElement.style.background='#4CAF50'; this.parentElement.innerHTML='🚜';"
+            onerror="this.style.display='none'; this.parentElement.style.background='#4CAF50'; this.parentElement.innerHTML='⚙️';"
           />
         </div>
         <div class="logo-text">AgriConnect</div>
       </div>
 
-      <div class="farmer-illustration">
+      <div class="owner-illustration">
         <img
-          src="/Frontend/login_tractor.jpeg"
-          alt="Tractor"
-          class="tractor-icon"
+          src="/Frontend/login-owner.jpeg"
+          alt="Equipment Owner"
+          class="equipment-owner-icon"
         />
       </div>
 
-      <h1 class="titleSign">Join AgriConnect</h1>
-      <p class="signUpTitle">
-        Create your farmer account and start connecting with the agricultural
-        community
+      <h1 class="signup-title">Join AgriConnect</h1>
+      <p class="signup_subtitle">
+        Create your equipment owner account and start renting your agricultural
+        equipment
       </p>
 
       <form id="signupForm">
-        <div class="form-group">
+        <div class="form-grp">
           <label for="fullName" class="form-label">Full Name</label>
           <input
             type="text"
@@ -45,7 +45,7 @@
           />
         </div>
 
-        <div class="form-group">
+        <div class="form-grp">
           <label for="email" class="form-label">Email Address</label>
           <input
             type="email"
@@ -56,7 +56,7 @@
           />
         </div>
 
-        <div class="form-group">
+        <div class="form-grp">
           <label for="password" class="form-label">Password</label>
           <input
             type="password"
@@ -65,9 +65,9 @@
             placeholder="Create a strong password"
             required
           />
-            
+        </div>
 
-        <div class="checkbox-group">
+        <div class="checkbox-grp">
           <input type="checkbox" id="terms" class="checkbox-input" required />
           <label for="terms" class="checkbox-label">
             I agree to the <a href="#terms">Terms of Service</a> and
@@ -75,26 +75,25 @@
           </label>
         </div>
 
-        <div class="checkbox-group">
+        <div class="checkbox-grp">
           <input type="checkbox" id="newsletter" class="checkbox-input" />
           <label for="newsletter" class="checkbox-label">
-            I want to receive updates about new features and agricultural tips
+            I want to receive updates about new features and equipment rental
+            opportunities
           </label>
         </div>
 
         <button type="submit" class="signup-button">
-          Create My Farmer Account
+          Create My Account
         </button>
       </form>
 
       <div class="login-link">
         Already have an account?
-        <a href="/Frontend/pages/farmer_login.html">Sign in here</a>
+        <a href="/Frontend/pages/owner_login.html">Sign in here</a>
       </div>
 
-      <div class="checkmark" id="successIcon"></div>
+      <div class="success-checkmark" id="successIcon"></div>
     </div>
-
-   
   </body>
 </html>
